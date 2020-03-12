@@ -66,7 +66,7 @@ namespace MusicOrganizer.Tests
         }
 
         [TestMethod]
-        public void Find_ReturnsCorrectArtist_Artist()
+        public void FindById_ReturnsCorrectArtist_Artist()
         {
             //Arrange
             string name01 = "Bon Iver";
@@ -79,6 +79,21 @@ namespace MusicOrganizer.Tests
 
             //Assert
             Assert.AreEqual(newArtist2, result);
+        }
+
+        public void FindIdByName_ReturnsCorrectArtistId_Int()
+        {
+            //Arrange
+            string name01 = "Bon Iver";
+            string name02 = "Bruno Mars";
+            Artist newArtist1 = new Artist(name01);
+            Artist newArtist2 = new Artist(name02);
+
+            //Act
+            int result = Artist.FindIdByName("name02");
+
+            //Assert
+            Assert.AreEqual(newArtist2.Id, result);
         }
 
         [TestMethod]

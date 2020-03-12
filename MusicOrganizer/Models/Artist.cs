@@ -40,8 +40,8 @@ namespace MusicOrganizer.Models
                 {
                     return artist.Id;
                 }
-                return 0;
             }
+            return 0;
         }
 
         public void AddRecord(Record record)
