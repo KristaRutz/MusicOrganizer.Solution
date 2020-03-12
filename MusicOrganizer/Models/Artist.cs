@@ -32,19 +32,17 @@ namespace MusicOrganizer.Models
             return _instances[searchId - 1];
         }
 
-        // public static Artist FindByName(string searchTerm)
-        // {
-        //     foreach (Artist item in _instances)
-        //     {
-        //         if (item.Name == searchTerm)
-        //         {
-        //         }
-        //         else
-        //         {
-
-        //         }
-        //     }
-        // }
+        public static int FindIdByName(string searchTerm)
+        {
+            foreach (Artist artist in _instances)
+            {
+                if (artist.Name == searchTerm)
+                {
+                    return artist.Id;
+                }
+                return 0;
+            }
+        }
 
         public void AddRecord(Record record)
         {
