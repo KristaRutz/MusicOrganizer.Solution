@@ -3,7 +3,12 @@
 }
 @using MusicOrganizer.Models
 
-<h1>@Model.Name</h1>
+<h1>@Model["record"].Name</h1>
+<h3>Artist: @Model["artist"].Name</h3>
+
 <div class="footer">
-  <a href="/records">Return To Home</a>
+
+  <a href='/artists/@Model["artist"].Id/records/new'>Add another records</a>
+<a href='/artists'>View all artists</a>
+  <a href='/artists/@Model["artist"].Id'>Return To Artist View</a>
 </div>

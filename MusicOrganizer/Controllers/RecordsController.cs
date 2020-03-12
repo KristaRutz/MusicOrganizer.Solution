@@ -6,28 +6,23 @@ namespace MusicOrganizer.Controllers
 {
     public class RecordsController : Controller
     {
-        [HttpGet("/records")]
-        public ActionResult Index()
+        [HttpGet("/artists/{artistId}/records/new")]
+        public ActionResult New(int artistId)
         {
-            List<Record> allRecords = Record.GetAll();
-            return View(allRecords);
+            Artist artist = Artist.FindById(artistId);
+            return View(artist);
         }
 
-        [HttpGet("/records/new")]
-        public ActionResult New() { return View(); }
 
-        [HttpPost("/records")]
-        public ActionResult Create(string name)
+        [HttpGet("artists/{artistId}/records/{recordId}")]
+        public ActionResult Show(int artistId, int recordId)
         {
-            Record myRecord = new Record(name);
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet("/records/{id}")]
-        public ActionResult Show(int id)
-        {
-            Record foundRecord = Record.Find(id);
-            return View(foundRecord);
+            Record record = Record.Find(recordId);
+            Artist artist = Artist.FindById(artistId);
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            model.Add("record", record);
+            model.Add("artist", artist);
+            return View(model);
         }
 
         [HttpPost("/records/delete")]

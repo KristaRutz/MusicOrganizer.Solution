@@ -37,5 +37,18 @@ namespace MusicOrganizer.Controllers
             model.Add("records", artistRecords);
             return View(model);
         }
+
+        [HttpPost("/artists/{artistId}/records")]
+        public ActionResult Create(int artistId, string recordName)
+        {
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            Artist foundArtist = Artist.FindById(artistId);
+            Record newRecord = new Record(recordName);
+            foundArtist.AddRecord(newRecord);
+            List<Record> artistRecords = foundArtist.Records;
+            model.Add("records", artistRecords);
+            model.Add("artist", foundArtist);
+            return View("Show", model);
+        }
     }
 }
