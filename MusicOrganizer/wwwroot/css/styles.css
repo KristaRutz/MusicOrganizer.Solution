@@ -1,7 +1,11 @@
 body {
-  background-color: rgb(224, 195, 252);
-  color: rgb(228, 226, 226);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: rgb(248, 240, 255);
+  color: rgb(100, 96, 96);
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+}
+
+.container {
+  margin-top: 50px;
 }
 
 div#footer {
@@ -12,4 +16,15 @@ div#footer {
   color: #ccc;
   background: #333;
   padding: 8px;
+}
+
+div#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  color: #ccc;
+  background: #333;
+  padding: 8px;
+  margin-bottom: 100px;
 }
