@@ -20,6 +20,12 @@ namespace MusicOrganizer.Controllers
             return View();
         }
 
+        // [HttpGet("/artists/search")]
+        // public ActionResult Search()
+        // {
+        //     return RedirectToAction("Show", id);
+        // }
+
         [HttpPost("/artists")]
         public ActionResult Create(string artistName)
         {

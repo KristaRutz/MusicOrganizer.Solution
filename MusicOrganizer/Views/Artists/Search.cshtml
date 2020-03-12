@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Search for an Artist</h1>
+<form action="/artists/{artistId}" method="post">
+  <label for="artistName">Search by name</label>
+  <input id="artistName" name="artistName" type="text">
+  <button type="submit">Add</button>
+</form>
+<p><a href="/">Back home</a></p>
+<p><a href="/artists">Back to the Collection.</a></p>

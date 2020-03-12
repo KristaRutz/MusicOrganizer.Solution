@@ -1,0 +1,15 @@
+@using MusicOrganizer.Models;
+@{
+  Layout = "_Layout";
+}
+
+<h1>Artists</h1>
+
+@if (@Model.Id <= 0)
+{
+  <h3>No artists match your search</h3>
+} 
+<h2>Here's the artist we found:</h2>
+<h3><a href='/artists/@Model.Id'>@Model.Name</a></h3>
+
+<p><a href='/'>Back home</a></p>
