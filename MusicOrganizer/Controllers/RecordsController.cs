@@ -7,15 +7,19 @@ namespace MusicOrganizer.Controllers
     public class RecordsController : Controller
     {
         [HttpGet("/records")]
-        public ActionResult Index() { return View(); }
+        public ActionResult Index()
+        {
+            List<Record> allRecords = Record.GetAll();
+            return View(allRecords);
+        }
 
         [HttpGet("/records/new")]
         public ActionResult New() { return View(); }
 
         [HttpPost("/records")]
-        public ActionResult Create()
+        public ActionResult Create(string name)
         {
-            Record myRecord = new Record("White Album");
+            Record myRecord = new Record(name);
             return RedirectToAction("Index");
         }
 
