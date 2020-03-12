@@ -17,7 +17,7 @@ namespace MusicOrganizer.Models
             Id = _instances.Count;
         }
 
-        public static List<Record> Getall()
+        public static List<Record> GetAll()
         {
             return _instances;
         }
