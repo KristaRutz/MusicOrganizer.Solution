@@ -80,5 +80,23 @@ namespace MusicOrganizer.Tests
             //Assert
             Assert.AreEqual(newArtist2, result);
         }
+
+        [TestMethod]
+        public void AddRecord_AssociatesRecordWithArtist_RecordList()
+        {
+            //Arrange
+            string description = "Walk the dog.";
+            Record newRecord = new Record(description);
+            List<Record> newList = new List<Record> { newRecord };
+            string name = "Work";
+            Artist newArtist = new Artist(name);
+            newArtist.AddRecord(newRecord);
+
+            //Act
+            List<Record> result = newArtist.Records;
+
+            //Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
     }
 }

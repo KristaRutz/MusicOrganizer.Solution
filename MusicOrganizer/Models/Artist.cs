@@ -45,5 +45,10 @@ namespace MusicOrganizer.Models
         //         }
         //     }
         // }
+
+        public void AddRecord(Record record)
+        {
+            Records.Add(record);
+        }
     }
 }
