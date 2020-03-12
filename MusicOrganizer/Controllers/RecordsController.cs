@@ -26,5 +26,12 @@ namespace MusicOrganizer.Controllers
             return View(foundRecord);
         }
 
+        [HttpPost("/records/delete")]
+        public ActionResult DeleteAll()
+        {
+            Record.ClearAll();
+            return View();
+        }
+
     }
 }

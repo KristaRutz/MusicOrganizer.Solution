@@ -4,6 +4,15 @@
 @using MusicOrganizer.Models
 <h1>Music Organizer</h1>
 
+@{foreach (Record record in Record.GetAll())
+{
+  <h4><a href="/records/@record.Id">@record.Name</a></h4>
+}}
+
+<form action="/records/delete" method="post">
+  <button type="submit" name="button">Clear All Record?</button>
+</form>
 <div class="footer">
+  <a href="/records/new">Add a new Record</a>
   <a href="/records">Return To Home</a>
 </div>

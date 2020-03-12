@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Enter Record to Add to the Collection</h1>
+<form action="/records" method="post">
+  <div class="form-group">
+    <label for="name">Record Name</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+  <button type="submit">Add</button>
+</form>
+
+<div class="footer">
+  <a href="/">Return to Home</a>
+  <a href="/records">View Records</a>
+</div>
